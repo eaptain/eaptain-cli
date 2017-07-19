@@ -5,8 +5,13 @@
   "repository": "https://github.com/eaptain/eaptain-cli.git",
   "author": "I'amee <admin@cavacn.com>",
   "license": "MIT",
+  "typings": "dist/index.d.ts",
   "dependencies": {
     "@types/redis": "^2.6.0",
     "redis": "^2.7.1"
+  },
+  "scripts": {
+    "compile": "rm -rf dist && tsc",
+    "prepublish": "npm run compile"
   }
 }
