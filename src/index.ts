@@ -81,7 +81,16 @@ export class EaptainCli extends EventEmitter {
         });
     }
 
-    async client(serviceName:string,clientId: string): Promise<string> {
+    async randomClient(serviceName: string) {
+        return new Promise<string>((resolve, reject) => {
+            this.center.srandmember(`SE.EAPTAIN.${serviceName}`, (err, value) => {
+                if (err) return reject(err);
+                return resolve(value);
+            });
+        });
+    }
+
+    async client(serviceName: string, clientId: string): Promise<string> {
         const key = `service@${serviceName}@${clientId}`;
         return new Promise<string>((resolve, reject) => {
             this.center.get(key, (err, values) => {
