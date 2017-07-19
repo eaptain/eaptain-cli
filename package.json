@@ -1,0 +1,12 @@
+{
+  "name": "eaptain-cli",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "repository": "https://github.com/eaptain/eaptain-cli.git",
+  "author": "I'amee <admin@cavacn.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/redis": "^2.6.0",
+    "redis": "^2.7.1"
+  }
+}
